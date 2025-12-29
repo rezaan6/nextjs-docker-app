@@ -17,6 +17,19 @@ Default API URL used when WEB_HOST is not provided:
 http://localhost:5000
 ```
 
+### Environment Configuration
+
+The frontend API base URL is controlled by the `NEXT_PUBLIC_WEB_HOST` environment variable.
+
+- If the variable is not set, the application defaults to:
+  http://localhost:5000
+
+- For local development (without Docker), create a `.env.local` file:
+  NEXT_PUBLIC_WEB_HOST=http://localhost:5000
+
+- For Docker builds, pass the value at build time:
+  docker build --build-arg WEB_HOST=http://localhost:5000 -t myapp .
+
 ---
 
 ### Configure API URL using WEB_HOST
